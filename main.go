@@ -1,8 +1,8 @@
-package database
+package main
 
 import (
 	"encoding/json"
-	"github.com/kumindu/appgo"
+	 database "github.com/kumindu/appgo"
 	"net/http"
 )
 
@@ -12,8 +12,8 @@ func main() {
 }
 
 func getValue(w http.ResponseWriter, r *http.Request) {
-	keys, ok := r.URL.Query()["name"]
-	animal, err := database(string(keys[0]))
+	keys := r.URL.Query()["name"]
+	animal, err := database.GetAnimal(string(keys[0]))
 	js, err := json.Marshal(animal)
 	if err != nil {
 	  http.Error(w, err.Error(), http.StatusInternalServerError)
