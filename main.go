@@ -1,11 +1,10 @@
 package app
 
 import (
-	"net/http"
 	"encoding/json"
-	 "GO/libs"
+	"github.com/kumindu/appgo"
+	"net/http"
 )
-
 
 func main() {
 	http.HandleFunc("/animal", getValue)
