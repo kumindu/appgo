@@ -1,4 +1,4 @@
-package database
+package libs
 
 import (
 	"encoding/json"
