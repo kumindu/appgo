@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang:1.13.0-stretch AS builder
 
 
 # Add Maintainer Info
@@ -12,12 +12,11 @@ WORKDIR /appgo
 
 
 # Copy and download dependency using go mod
-COPY go.mod .
-COPY go.sum .
+COPY ./go.mod ./go.sum ./
 RUN go mod download
 
 # Copy the code into the container
-COPY . .
+COPY ./ ./
 
 # Build the application
 RUN go build -o main .
