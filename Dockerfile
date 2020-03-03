@@ -1,6 +1,6 @@
 FROM golang:1.13.0-stretch AS builder
 
-export GO111MODULE=on
+ENV GO111MODULE=on
 
 # Add Maintainer Info
 LABEL maintainer="Kumindu Ranawaka<kirlogapanet@gmail.com>"
