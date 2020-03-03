@@ -16,6 +16,8 @@ WORKDIR /appgo
 
 
 # Copy and download dependency using go mod
+RUN mkdir -p /go/pkg/mod
+RUN mkdir -p /go/pkg/sum
 COPY go.mod go.sum ./
 RUN go mod download
 
