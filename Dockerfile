@@ -4,15 +4,17 @@ FROM golang:latest
 # Add Maintainer Info
 LABEL maintainer="Kumindu Ranawaka<kirlogapanet@gmail.com>"
 
+# Move to working directory /build
+RUN mkdir /appgo
+
 # Move to /appgo directory as the place for resulting binary folder
 WORKDIR /appgo
 
-# Copy go mod and sum files
-COPY go.mod go.sum ./
 
-# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
+# Copy and download dependency using go mod
+COPY go.mod .
+COPY go.sum .
 RUN go mod download
-
 
 # Copy the code into the container
 COPY . .
