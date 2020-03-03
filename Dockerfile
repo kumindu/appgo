@@ -1,7 +1,5 @@
 FROM golang:latest
 
-RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh
 
 # Add Maintainer Info
 LABEL maintainer="Kumindu Ranawaka<kirlogapanet@gmail.com>"
