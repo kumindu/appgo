@@ -5,7 +5,9 @@ RUN mkdir /appgo
 ADD . /appgo
 
 # Copy and download dependency using go mod
-RUN go mod download
+COPY go.src .
+COPY go.sum .
+RUN go src download
 
 # Copy the code into the container
 COPY . .
