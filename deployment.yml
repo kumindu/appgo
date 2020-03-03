@@ -15,7 +15,7 @@ spec:
        spec:
           containers:
              -name:application
-              image:kumindu/go-app
+              image:kumindu/appgo
               image PullPolicy:IfNotPresent
               ports:
                 -ContainerPort:2000
