@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/kumindu/appgo/libs"
+	database "github.com/kumindu/appgo/libs"
 	"net/http"
 )
 
