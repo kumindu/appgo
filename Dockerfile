@@ -1,4 +1,4 @@
-FROM golang:1.12.0-alpine3.9
+FROM golang:latest
 
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
@@ -16,8 +16,6 @@ WORKDIR /appgo
 
 
 # Copy and download dependency using go mod
-RUN mkdir -p /go/pkg/mod
-RUN mkdir -p /go/pkg/sum
 COPY go.mod go.sum ./
 RUN go mod download
 
