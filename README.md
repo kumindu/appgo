@@ -41,7 +41,7 @@ and then will deploy a new task definition to Amazon ECS, when a release is crea
   3.Deploy to kubernetes deployment
  
  ```
-   kubectl run springdemo --image={docker_hub_profile_Name}/godemoapp:latest --port 8000 --labels="app=godemoapp,tier=backend"
+   kubectl run godemoapp --image={docker_hub_profile_Name}/godemoapp:latest --port 8000 --labels="app=godemoapp,tier=backend"
  
  ```
  
