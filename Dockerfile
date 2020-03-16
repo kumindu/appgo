@@ -27,7 +27,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main .
 
 # Export necessary port
-EXPOSE 2000
+EXPOSE 8000
 
 # Command to run when starting the container
 CMD ["/appgo/main"]
