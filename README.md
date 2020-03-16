@@ -28,14 +28,14 @@ and then will deploy a new task definition to Amazon ECS, when a release is crea
 
  1.Build docker images.
 ```
-   docker build -t {docker_hub_profile_Name}/springdemo .
+   docker build -t {docker_hub_profile_Name}/godemoapp .
    
 ```
  2.Docker push to docker hub
  
 ```
    docker login
-   docker push {docker_hub_profile_Name}/springdemo .
+   docker push {docker_hub_profile_Name}/godemoapp 
    
 ```
   3.Deploy to kubernetes deployment
