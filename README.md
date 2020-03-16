@@ -25,3 +25,53 @@ and then will deploy a new task definition to Amazon ECS, when a release is crea
     and best practices on handling the access key credentials.
     
 ## To use this kubernetes, you will need to complete the following set-up steps:
+
+ 1.Build docker images.
+```
+   docker build -t {docker_hub_profile_Name}/springdemo .
+   
+```
+ 2.Docker push to docker hub
+ 
+```
+   docker login
+   docker push {docker_hub_profile_Name}/springdemo .
+   
+```
+  3.Deploy to kubernetes deployment
+ 
+ ```
+   kubectl run springdemo --image={docker_hub_profile_Name}/godemoapp:latest --port 8080 --labels="app=godemoapp,tier=backend"
+ 
+ ```
+ 
+  4.To get kubernetes deployment,pods
+ 
+ ```
+  kubectl get pods
+  kubectl get deployment
+  
+ ```
+ 
+  5.Create kubernetes service
+  
+ ```
+   kubectl expose deployment godemoapp --type=LoadBalancer --port 80 --target-port 8080
+ 
+ ```
+ 
+  6.To get kubernetes services
+ 
+ ```
+  
+   kubectl get service
+  
+ ```
+ 
+  7.To scale deployment in kubernetes
+  
+ ```
+   kubectl scale deployment godemoapp --replicas=2
+  
+ ```
+
